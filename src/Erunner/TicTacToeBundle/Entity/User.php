@@ -22,18 +22,19 @@ class User extends BaseUser
      * @ORM\OneToMany(targetEntity="Message", mappedBy="user")
      */
     protected $messages;
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->messages = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
+
+//    /**
+//     * Constructor
+//     */
+//    public function __construct()
+//    {
+//        $this->messages = new \Doctrine\Common\Collections\ArrayCollection();
+//    }
+
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
