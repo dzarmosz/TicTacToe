@@ -1,0 +1,28 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="span4">
+            <div class="hero-unit">
+                {% for message in messages %}
+                    <a><b>{{ message.user.userName() }} {{ message.getCreated() | date('H:i d-m-Y') }} </b><br> {{ message.getText() }}</a>
+                    {% if is_granted('ROLE_SUPER_ADMIN') %}
+                        <a class="btn btn-primary btn-large" href={{ path('delete_message', {'id': message.id}) }}>delete</a>
+                    {% endif %}
+                    <br />
+                {% endfor %}
+                <br>
+                <form action="{{ path('chat') }} " method="POST" novalidate {{ form_enctype(form) }}>
+                    {% if not form.vars.valid %}
+                        <div class="alert">
+                            <strong>Warning!</strong>{{ form_errors(form) }}
+                        </div>
+                    {% endif %}
+                    {{ form_rest(form) }}
+                </form>
+            </div>
+        </div>
+        <div class="span8">...</div>
+    </div>
+
+{% endblock body %}
