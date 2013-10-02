@@ -1,0 +1,9 @@
+{% extends '::base.html.twig' %}
+
+
+{% block body %}
+    {% for user in users %}
+        <a><strong>USER NAME: </strong>{{ user.getuserName() }} <br /></a>
+        <a><strong>EMAIL: </strong>{{ user.getEmail() }} <br /></a>
+    {% endfor %}
+{% endblock %}

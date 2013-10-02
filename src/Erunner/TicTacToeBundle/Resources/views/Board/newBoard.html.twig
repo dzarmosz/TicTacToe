@@ -1,0 +1,11 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    {% if not form.vars.valid %}
+        <div class="alert">
+            <strong>Warning!</strong>{{ form_errors(form) }}
+        </div>
+    {% endif %}
+    {{ form_end(form) }}
+{% endblock %}

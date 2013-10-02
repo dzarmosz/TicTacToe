@@ -6,9 +6,6 @@
             <div class="hero-unit">
                 {% for message in messages %}
                     <a><b>{{ message.user.userName() }} {{ message.getCreated() | date('H:i d-m-Y') }} </b><br> {{ message.getText() }}</a>
-                    {% if is_granted('ROLE_SUPER_ADMIN') %}
-                        <a class="btn btn-primary btn-large" href={{ path('delete_message', {'id': message.id}) }}>delete</a>
-                    {% endif %}
                     <br />
                 {% endfor %}
                 <br>
@@ -22,7 +19,12 @@
                 </form>
             </div>
         </div>
-        <div class="span8">...</div>
+        <div class="span8">
+            <div class="span8">
+                <div class="hero-unit">
+                    {% include 'ErunnerTicTacToeBundle:Board:newBoard.html.twig' %}
+                </div>
+            </div></div>
     </div>
 
 {% endblock body %}

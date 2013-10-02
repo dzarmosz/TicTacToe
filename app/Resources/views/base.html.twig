@@ -13,8 +13,14 @@
                 <div class="container">
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li class="first">
-                                <a href="{{ path('chat') }}">Chat</a>
+                            <li class="active">
+                                <a href="{{ path('chat') }}">Game</a>
+                            </li>
+                            <li class="active">
+                                <a href="{{ path('show_profile') }}">Show profile</a>
+                            </li>
+                            <li class="active">
+                                <a href="{{ path('edit_profile') }}">Edit profile</a>
                             </li>
                             <li class="last">
                                 <a href="{{ path('fos_user_security_logout') }}">Log out</a>

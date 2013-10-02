@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="span8">
+            <div class="hero-unit">
+                {% for message in messages %}
+                    <a>{{ game.getName() }}</a>
+                {% endfor %}
+                <br>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}

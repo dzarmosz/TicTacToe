@@ -3,6 +3,8 @@
 namespace Erunner\TicTacToeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Message
@@ -23,7 +25,7 @@ class Message
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="text", type="string", length=255)
      */
     private $text;

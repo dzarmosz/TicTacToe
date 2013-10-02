@@ -252,6 +252,24 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/board')) {
+            // board_new
+            if ($pathinfo === '/board/new') {
+                return array (  '_controller' => 'Erunner\\TicTacToeBundle\\Controller\\BoardController::newBoardAction',  '_route' => 'board_new',);
+            }
+
+            // board_printing
+            if ($pathinfo === '/board/printing') {
+                return array (  '_controller' => 'Erunner\\TicTacToeBundle\\Controller\\BoardController::printBoardAction',  '_route' => 'board_printing',);
+            }
+
+        }
+
+        // game_list
+        if ($pathinfo === '/game/list') {
+            return array (  '_controller' => 'Erunner\\TicTacToeBundle\\Controller\\GameController::gameListAction',  '_route' => 'game_list',);
+        }
+
         // erunner_tictactoe_message_index
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
@@ -272,6 +290,16 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'delete_message')), array (  '_controller' => 'Erunner\\TicTacToeBundle\\Controller\\MessageController::deleteMessageAction',));
             }
 
+        }
+
+        // show_profile
+        if ($pathinfo === '/show/profile') {
+            return array (  '_controller' => 'Erunner\\TicTacToeBundle\\Controller\\UserController::showProfileAction',  '_route' => 'show_profile',);
+        }
+
+        // edit_profile
+        if ($pathinfo === '/edit/profile') {
+            return array (  '_controller' => 'Erunner\\TicTacToeBundle\\Controller\\UserController::editProfileAction',  '_route' => 'edit_profile',);
         }
 
         if (0 === strpos($pathinfo, '/log')) {

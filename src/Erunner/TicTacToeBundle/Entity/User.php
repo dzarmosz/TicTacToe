@@ -23,13 +23,11 @@ class User extends BaseUser
      */
     protected $messages;
 
-//    /**
-//     * Constructor
-//     */
-//    public function __construct()
-//    {
-//        $this->messages = new \Doctrine\Common\Collections\ArrayCollection();
-//    }
+    /**
+     * @ORM\OneToOne(targetEntity="Game", inversedBy="user")
+     * @ORM\JoinColumn(name="game_id", referencedColumnName="id")
+     */
+    protected $game;
 
     /**
      * Get id
@@ -72,5 +70,35 @@ class User extends BaseUser
     public function getMessages()
     {
         return $this->messages;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->messages = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Set game
+     *
+     * @param \Erunner\TicTacToeBundle\Entity\Game $game
+     * @return User
+     */
+    public function setGame(\Erunner\TicTacToeBundle\Entity\Game $game = null)
+    {
+        $this->game = $game;
+    
+        return $this;
+    }
+
+    /**
+     * Get game
+     *
+     * @return \Erunner\TicTacToeBundle\Entity\Game 
+     */
+    public function getGame()
+    {
+        return $this->game;
     }
 }
