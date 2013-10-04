@@ -71,7 +71,7 @@
       <file leaf-file-name="chat.html.twig" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Erunner/TicTacToeBundle/Resources/views/Message/chat.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="76" selection-start="671" selection-end="671" vertical-scroll-proportion="0.24249423">
+            <state line="18" column="10" selection-start="787" selection-end="787" vertical-scroll-proportion="0.31177828">
               <folding />
             </state>
           </provider>
@@ -890,7 +890,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Erunner/TicTacToeBundle/Resources/views/Message/chat.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="76" selection-start="671" selection-end="671" vertical-scroll-proportion="0.24249423">
+        <state line="18" column="10" selection-start="787" selection-end="787" vertical-scroll-proportion="0.31177828">
           <folding />
         </state>
       </provider>
